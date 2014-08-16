@@ -1,0 +1,31 @@
+{
+    "name": "phpextra/common",
+    "description": "Common interfaces and classes",
+    "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "Jacek Kobus",
+            "email": "kobus.jacek@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-0": {
+            "PHPExtra": "./src"
+        }
+    },
+    "require": {
+        "phpextra/sorter": "~1.0"
+    },
+    "require-dev": {
+        "phpextra/qa-tools": "~1.0"
+    },
+    "archive": {
+        "exclude": ["/build", "/tests", "phpunit.bat", "fixer.bat", "phpunit.xml.dist", "test.php", "test.bat", "build.xml"]
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.2.x-dev"
+        }
+    }
+}
