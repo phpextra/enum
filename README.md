@@ -32,6 +32,16 @@ echo $guy->isEqual($mike); // returns false
 If no default value will be specified, you must set it as a constructor argument.
 If given constructor value will be invalid, ``\UnexpectedValueException`` will be thrown.
 
+## Installation (Composer)
+
+```json
+{
+    "require": {
+        "phpextra/enum":"~1.0"
+    }
+}
+```
+
 ##Changelog
 
 No releases yet
