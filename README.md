@@ -1,5 +1,13 @@
 #Enum type
 
+[![Latest Stable Version](https://poser.pugx.org/phpextra/enum/v/stable.svg)](https://packagist.org/packages/phpextra/enum)
+[![Total Downloads](https://poser.pugx.org/phpextra/enum/downloads.svg)](https://packagist.org/packages/phpextra/enum)
+[![License](https://poser.pugx.org/phpextra/enum/license.svg)](https://packagist.org/packages/phpextra/enum)
+[![Build Status](http://img.shields.io/travis/phpextra/enum.svg)](https://travis-ci.org/phpextra/enum)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/phpextra/enum/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/phpextra/enum/?branch=master)
+[![Code Coverage](https://scrutinizer-ci.com/g/phpextra/enum/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/phpextra/enum/?branch=master)
+[![GitTip](http://img.shields.io/gittip/jkobus.svg)](https://www.gittip.com/jkobus)
+
 ##Usage
 
 ###Enum (PHPExtra\Type\EnumInterface)
