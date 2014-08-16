@@ -44,7 +44,7 @@ If given constructor value will be invalid, ``\UnexpectedValueException`` will b
 
 ##Changelog
 
-No releases yet
+    No releases yet
 
 ##Contributing
 
@@ -56,11 +56,11 @@ If you would like to help take a look at the **list of issues**.
 
 ##Requirements
 
-See **composer.json** for a full list of dependencies.
+    See **composer.json** for a full list of dependencies.
 
 ##Authors
 
-Jacek Kobus - <kobus.jacek@gmail.com>
+    Jacek Kobus - <kobus.jacek@gmail.com>
 
 ## License information
 
