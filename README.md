@@ -56,7 +56,7 @@ If you would like to help take a look at the **list of issues**.
 
 ##Requirements
 
-    See **composer.json** for a full list of dependencies.
+    See composer.json for a full list of dependencies.
 
 ##Authors
 
