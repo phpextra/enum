@@ -16,7 +16,7 @@
     ],
     "autoload": {
         "psr-0": {
-            "PHPExtra\\Enum": "src/"
+            "PHPExtra\\Type\\Enum": "src/"
         }
     },
     "extra": {
