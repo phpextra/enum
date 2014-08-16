@@ -1,6 +1,6 @@
 {
-    "name": "phpextra/common",
-    "description": "Common interfaces and classes",
+    "name": "phpextra/enum",
+    "description": "Enum type for PHP",
     "license": "BSD-3-Clause",
     "authors": [
         {
@@ -11,21 +11,20 @@
     "minimum-stability": "dev",
     "autoload": {
         "psr-0": {
-            "PHPExtra": "./src"
+            "PHPExtra": "/src"
         }
     },
     "require": {
-        "phpextra/sorter": "~1.0"
     },
     "require-dev": {
-        "phpextra/qa-tools": "~1.0"
+        "phpunit/phpunit": "~4.2"
     },
     "archive": {
-        "exclude": ["/build", "/tests", "phpunit.bat", "fixer.bat", "phpunit.xml.dist", "test.php", "test.bat", "build.xml"]
+        "exclude": ["*", ".*", "!/src", "!/README.md", "!/LICENSE.md"]
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "1.2.x-dev"
+            "dev-master": "1.0.x-dev"
         }
     }
 }

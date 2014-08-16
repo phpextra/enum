@@ -2,11 +2,11 @@
 
 ##Usage
 
-###Enum (PHPExtra\Type\Enum)
+###Enum (PHPExtra\Type\EnumInterface)
 
 Create your first enum type by creating a new class:
 
-    class TheGuy extends AbstractEnum
+    class TheGuy extends Enum
     {
         const _default = self::NICE_GUY;
         const SMART_GUY = 'Mike';
