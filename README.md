@@ -6,24 +6,28 @@
 
 Create your first enum type by creating a new class:
 
-    class TheGuy extends Enum
-    {
-        const _default = self::NICE_GUY;
-        const SMART_GUY = 'Mike';
-        const NICE_GUY = 'Rick';
-    }
+```php
+class TheGuy extends Enum
+{
+    const _default = self::NICE_GUY;
+    const SMART_GUY = 'Mike';
+    const NICE_GUY = 'Rick';
+}
+```
 
 Thats all.
 
 Now you can use it:
 
-    $guy = new TheGuy();
-    echo $guy->getValue(); // returns Rick
+```php
+$guy = new TheGuy();
+echo $guy->getValue(); // returns Rick
 
-    $mike = new TheGuy(TheGuy::MIKE);
-    echo $mike->getValue(); // returns Mike
+$mike = new TheGuy(TheGuy::MIKE);
+echo $mike->getValue(); // returns Mike
 
-    echo $guy->isEqual($mike); // returns false
+echo $guy->isEqual($mike); // returns false
+```
 
 If no default value will be specified, you must set it as a constructor argument.
 If given constructor value will be invalid, ``\UnexpectedValueException`` will be thrown.
