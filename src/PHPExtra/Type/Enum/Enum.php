@@ -22,13 +22,13 @@ abstract class Enum
     protected $default = null;
 
     /**
-     * @param string $value
+     * @param mixed $value
      *
      * @throws \UnexpectedValueException
      */
     public function __construct($value = null)
     {
-        if(!$value && $this->default !== null){
+        if($value === null && $this->default !== null){
             $value = $this->default;
         }
 
