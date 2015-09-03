@@ -19,12 +19,6 @@
             "PHPExtra\\Type\\Enum": "src/"
         }
     },
-    "extra": {
-        "branch-alias": {
-            "dev-master": "1.0.x-dev"
-        }
-    },
-    "minimum-stability": "dev",
     "require": {
         "php": ">=5.3.0"
     },
