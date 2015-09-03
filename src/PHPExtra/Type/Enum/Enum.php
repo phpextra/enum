@@ -3,16 +3,23 @@
 namespace PHPExtra\Type\Enum;
 
 /**
- * The Enum class
+ * The Enum type
  *
  * @author Jacek Kobus <kobus.jacek@gmail.com>
  */
-abstract class Enum implements EnumInterface
+abstract class Enum
 {
     /**
      * @var string
      */
     private $value;
+
+    /**
+     * Default value for new enums
+     *
+     * @var mixed
+     */
+    protected $default = null;
 
     /**
      * @param string $value
@@ -21,18 +28,25 @@ abstract class Enum implements EnumInterface
      */
     public function __construct($value = null)
     {
-        if(!$value && static::_default !== null){
-            $value = static::_default;
+        if(!$value && $this->default !== null){
+            $value = $this->default;
         }
 
-        if (!self::isValid($value)) {
+        if(!is_scalar($value)){
+            throw new \UnexpectedValueException(sprintf('Enum value must be scalar ("%s" given)', gettype($value)));
+        }
+
+        if(!$this->isValid($value)){
             throw new \UnexpectedValueException(sprintf('Unexpected value "(%s)%s"', gettype($value), $value));
         }
+
         $this->value = $value;
     }
 
     /**
-     * {@inheritdoc}
+     * Get scalar value
+     *
+     * @return mixed
      */
     public function getValue()
     {
@@ -40,24 +54,22 @@ abstract class Enum implements EnumInterface
     }
 
     /**
-     * @param $value
+     * Check if given value is valid for this enum
+     *
+     * @param mixed $value
      *
      * @return array
      */
-    public static function isValid($value)
-    {
-        if($value === null){
-            return false;
-        }
-
-        $reflection = new \ReflectionClass(get_called_class());
-        return in_array($value, $reflection->getConstants());
-    }
+    public abstract function isValid($value);
 
     /**
-     * {@inheritdoc}
+     * Tell if enums are equal
+     *
+     * @param Enum $enum
+     *
+     * @return bool
      */
-    public function equals(EnumInterface $enum)
+    public function equals(Enum $enum)
     {
         return $this->getValue() === $enum->getValue();
     }

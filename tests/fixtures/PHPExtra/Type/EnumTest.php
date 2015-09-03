@@ -1,5 +1,9 @@
 <?php
 
+use PHPExtraTest\Type\Enum\TestEnum;
+
+include_once __DIR__ . '/TestEnum.php';
+
 /**
  * EnumTest
  *
@@ -9,9 +13,8 @@ class EnumTest extends PHPUnit_Framework_TestCase
 {
     public function testCreateEnumReturnsEnumWithValidValue()
     {
-        $enum = new EnumMock(EnumMock::VAL1);
-
-        $this->assertEquals(EnumMock::VAL1, $enum->getValue());
+        $enum = new TestEnum('one');
+        $this->assertEquals('one', $enum->getValue());
     }
 
     /**
@@ -19,21 +22,27 @@ class EnumTest extends PHPUnit_Framework_TestCase
      */
     public function testCreateEnumWithInvalidValueThrowsException()
     {
-        new EnumMock(15);
+        new TestEnum(15);
     }
 
     public function testCreateEnumWithoutConstructorArgWillUseDefaultEnumValue()
     {
-        $enum = new EnumMock2();
-        $this->assertEquals(EnumMock2::VAL3, $enum->getValue());
+        $enum = new TestEnum();
+        $this->assertEquals('two', $enum->getValue());
     }
 
     /**
      * @expectedException UnexpectedValueException
      */
-    public function testCreateEnumWithoutDefaultValueAndConstructorArgThrowsException()
+    public function testCreateEnumUsingNonScalarValueThrowsException()
     {
-        new EnumMock();
+        new TestEnum(new stdClass());
+    }
+
+    public function testEnumCanBeConvertedToString()
+    {
+        $enum = new TestEnum();
+        $this->assertSame('two', (string)$enum);
     }
 }
  
